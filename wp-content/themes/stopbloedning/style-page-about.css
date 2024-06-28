@@ -1,0 +1,314 @@
+/* CSS for Omkring Virksomheden Page */
+
+.banner-cover {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background: url('images/stop_6.png') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-text {
+  color: #ffffff;
+  text-align: center;
+}
+
+.banner-title {
+  font-size: 4.41rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin-bottom: 1.01rem;
+}
+
+.banner-button-group {
+  margin-top: 1.51rem;
+}
+
+.banner-button a {
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #1173c5;
+  padding: 1.01rem 1rem;
+  border-style: none;
+  border-width: 0px;
+  border-radius: 0rem;
+  display: block;
+  text-align: center;
+}
+
+.feature-section {
+  padding: 4rem 0;
+  background-color: #1b253d;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.feature-column {
+  padding: 10px 40px;
+  border-right: 1px solid #ffffff3d;
+  flex: 1;
+}
+
+.feature-column:last-child {
+  border-right: none;
+}
+
+.feature-number {
+  color: #ffffff;
+  font-size: 3.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+.feature-title {
+  color: #ffffff;
+  margin-top: 1.8rem;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.feature-description {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.content-container {
+  padding: 4rem 1rem;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.content-container h1,
+.content-container h2 {
+  color: #141e31;
+  font-weight: 500;
+}
+
+.content-container p {
+  color: #3f3f3f;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.team-members {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.team-member {
+  flex: 1;
+  text-align: center;
+}
+
+.team-member img {
+  width: 100%;
+  max-width: 200px;
+}
+
+@media (max-width: 768px) {
+  .banner-title {
+    font-size: 2.5rem;
+  }
+
+  .feature-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feature-column {
+    border-right: none;
+    border-bottom: 1px solid #ffffff3d;
+    margin-bottom: 2rem;
+  }
+
+  .feature-column:last-child {
+    border-bottom: none;
+  }
+
+  .team-members {
+    flex-direction: column;
+  }
+
+  .team-member {
+    margin-bottom: 2rem;
+  }
+}
+.our-services-cover {
+  background-color: #e2e7e7;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.our-services-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.our-services-title {
+  color: #ffffff;
+  margin-bottom: 0px;
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.our-services-columns {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.our-service-column {
+  flex: 1 1 150px;
+  margin: 20px;
+  text-align: center;
+}
+
+.our-service-image img {
+  width: 80px;
+  height: 80px;
+}
+
+.our-service-heading {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.our-services-button {
+  display: flex;
+  justify-content: center;
+}
+
+.our-service-button {
+  border: none;
+  border-radius: 0;
+  background-color: #b71c1c;
+  color: #ffffff;
+  padding: 20px 60px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .our-services-cover {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .our-services-title {
+    font-size: 32px;
+  }
+
+  .our-services-columns {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .our-service-image img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .our-service-heading {
+    font-size: 16px;
+  }
+
+  .our-service-button {
+    padding: 15px 30px;
+    font-size: 14px;
+  }
+}
+.team-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f7f7f7;
+}
+
+.team-title {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.team-members {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  flex: 1 1 200px;
+  margin: 20px;
+  text-align: center;
+}
+
+.team-member img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.team-member-name {
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.team-member-role {
+  font-size: 16px;
+  color: #777;
+  margin-top: 5px;
+}
+
+.team-button {
+  margin-top: 30px;
+}
+
+.team-btn {
+  background-color: #b71c1c;
+  color: #ffffff;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .team-members {
+    flex-direction: column;
+  }
+
+  .team-member {
+    margin: 20px auto;
+  }
+
+  .team-member img {
+    max-width: 80%;
+  }
+}

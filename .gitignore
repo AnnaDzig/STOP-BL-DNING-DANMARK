@@ -1,0 +1,25 @@
+# WordPress core
+/wp-admin/
+/wp-includes/
+
+# WordPress configuration file
+wp-config.php
+
+# Log files
+debug.log
+
+# Temporary files
+*.log
+*.tmp
+
+# Uploads directory
+/wp-content/uploads/
+
+# Backup files
+*.sql
+*.tar.gz
+*.zip
+
+# OS-specific files
+.DS_Store
+Thumbs.db
