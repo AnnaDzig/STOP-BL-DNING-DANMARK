@@ -1,4 +1,10 @@
-/* Custom styles for your theme */
+/* Define color variables */
+:root {
+  --primary-color: #34495e;
+  --secondary-color: #be2d37;
+  --background-color: #ecf0f1;
+  --accent-color: #ffffff;
+}
 
 body {
   font-family: Arial, sans-serif;
@@ -7,7 +13,7 @@ body {
 }
 
 header {
-  background: #f0f0f0;
+  background: var(--background-color);
   padding: 20px 0;
   border-bottom: 1px solid #ccc;
 }
@@ -643,7 +649,7 @@ textarea {
 
 /* Footer Section */
 .site-footer {
-  background-color: #07277c;
+  background-color: var(--primary-color);
   color: #fff;
   padding: 2rem 1rem;
   font-family: Arial, sans-serif;
@@ -706,9 +712,9 @@ textarea {
   list-style: none;
 }
 
-.footer-social .social-media-links li a img {
-  width: 32px;
-  height: 32px;
+.footer-social .social-media-item {
+  width: 50px;
+  height: 50px;
   transition: opacity 0.3s;
 }
 
@@ -733,6 +739,11 @@ textarea {
 
   .footer-column {
     min-width: 100%;
+  }
+
+  .footer-social .social-media-links {
+    display: flex;
+    flex-direction: column;
   }
 }
 /* Kursus og Produkt Section */

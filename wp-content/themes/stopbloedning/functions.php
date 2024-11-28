@@ -6,7 +6,7 @@ function stopbloedning_enqueue_styles() {
 
 function stopbloedning_enqueue_scripts() {
     // Enqueue the main JavaScript file
-    wp_enqueue_script('theme-scripts', get_template_directory_uri() . '/main.js', array(), null, true); // Update the path here
+    wp_enqueue_script('theme-scripts', get_template_directory_uri() . '/main.js', array(), null, true); 
 }
 
 function stopbloedning_customize_register($wp_customize) {
@@ -19,7 +19,7 @@ function stopbloedning_customize_register($wp_customize) {
     // Add control for hero background image
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_image_control', array(
         'label' => __('Hero Background Image', 'stopbloedning'),
-        'section' => 'title_tagline', // You can create a new section or use an existing one
+        'section' => 'title_tagline', 
         'settings' => 'hero_background_image'
     )));
 }
@@ -41,28 +41,6 @@ function stopbloedning_theme_setup() {
     ));
 }
 
-function handle_contact_form() {
-    if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])) {
-        $name = sanitize_text_field($_POST['name']);
-        $email = sanitize_email($_POST['email']);
-        $message = sanitize_textarea_field($_POST['message']);
-
-        $to = 'kk@stopblodning.dk';
-        $subject = 'New Contact Form Submission';
-        $body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
-        $headers = array('Content-Type: text/plain; charset=UTF-8');
-
-        wp_mail($to, $subject, $body, $headers);
-
-        wp_redirect(home_url('/thank-you')); // Redirect to a thank you page after submission
-        exit;
-    }
-}
-add_action('admin_post_nopriv_contact_form', 'handle_contact_form');
-add_action('admin_post_contact_form', 'handle_contact_form');
-
-
-
 
 // Hook the theme setup function to the after_setup_theme action
 add_action('after_setup_theme', 'stopbloedning_theme_setup');
@@ -72,6 +50,40 @@ function enqueue_page_about_styles() {
     }
 }
 add_action('wp_enqueue_scripts', 'enqueue_page_about_styles');
+
+function enqueue_custom_stylesheets() {
+    wp_register_style('page-contact-style', get_template_directory_uri() . '/style-page-contact.css', array(), filemtime(get_template_directory() . '/style-page-contact.css'), 'all');
+    wp_enqueue_style('page-contact-style');
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_stylesheets');
+
+
+function handle_contact_form_submission() {
+    // Check if all necessary fields are set
+    if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])) {
+        $name = sanitize_text_field($_POST['name']);
+        $email = sanitize_email($_POST['email']);
+        $phone = sanitize_text_field($_POST['phone']);
+        $message = sanitize_textarea_field($_POST['message']);
+
+        $to = 'adzihota@gmail.com'; // Your email address
+        $subject = 'New Contact Form Submission';
+        $body = "Name: $name\nEmail: $email\nPhone: $phone\nMessage: $message";
+        $headers = array('Content-Type: text/plain; charset=UTF-8', 'From: ' . $email);
+
+        // Send the email
+        if (wp_mail($to, $subject, $body, $headers)) {
+            wp_redirect(home_url('/page-thank-you')); // Redirect to a thank-you page
+            exit;
+        } else {
+            wp_redirect(home_url('/error')); // Redirect to an error page
+            exit;
+        }
+    }
+}
+
+add_action('admin_post_submit_contact_form', 'handle_contact_form_submission');
+add_action('admin_post_nopriv_submit_contact_form', 'handle_contact_form_submission');
 
 
 ?>

@@ -26,9 +26,8 @@
             <div class="footer-column footer-social">
                 <h3>Følg os</h3>
                 <ul class="social-media-links">
-                    <li><a href="#"><img src="path-to-your-facebook-icon.png" alt="Facebook"></a></li>
-                    <li><a href="#"><img src="path-to-your-twitter-icon.png" alt="Twitter"></a></li>
-                    <li><a href="#"><img src="path-to-your-instagram-icon.png" alt="Instagram"></a></li>
+                    <li><a href="#"><img class="social-media-item" src="<?php echo get_template_directory_uri(); ?>/images/facebook.png" alt="Facebook"></a></li>
+                    <li><a href="#"><img class="social-media-item" src="<?php echo get_template_directory_uri(); ?>/images/linkedin.png" alt="LinkedIn"></a></li>
                 </ul>
             </div>
         </div>

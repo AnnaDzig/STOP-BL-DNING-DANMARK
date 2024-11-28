@@ -136,7 +136,7 @@ get_header(); ?>
             </div>
             <div class="contact-us-column contact-us-form">
                 <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
-                    <input type="hidden" name="action" value="contact_form">
+                    <input type="hidden" name="action"value="submit_contact_form">
                     <div class="form-group">
                         <label for="name">Navn <span>(Påkrævet)</span></label>
                         <input type="text" id="name" name="name" required>
